@@ -1,0 +1,65 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_askname
+- utter_askID
+- utter_skype
+- utter_askaccount
+- utter_ticket
+- utter_goodbye
+actions:
+- utter_greet
+- utter_askname
+- utter_askID
+- utter_skype
+- utter_askaccount
+- utter_ticket
+- utter_goodbye
+config:
+  store_entities_as_slots: true
+entities:
+- name
+- ID
+- account
+intents:
+- greet
+- goodbye
+- user_name
+- user_ID
+- user_account
+- skype
+- skype_issues
+- ticket
+- login_issues
+slots:
+  ID:
+    initial_value: null
+    max_value: 1.0
+    min_value: 0.0
+    type: rasa_core.slots.FloatSlot
+  account:
+    initial_value: null
+    type: rasa_core.slots.CategoricalSlot
+    values:
+    - windows
+    - entrust
+    - pgp
+  name:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_askID:
+  - text: May i know your ID ?
+  utter_askaccount:
+  - text: which account is it associated with?
+  utter_askname:
+  - text: ' May i know your name ?'
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hi, How may i help you?
+  utter_skype:
+  - text: Did you try restarting the process?
+  utter_ticket:
+  - text: OK, let me raise a ticket and redirect to the concerned team
+topics: []
